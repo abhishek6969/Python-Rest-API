@@ -10,10 +10,12 @@ from resources.user import blp as userBlueprint
 from flask_jwt_extended import JWTManager
 from blocklist import blocklist
 import os
+from dotenv import load_dotenv
 
 
 def create_app(db_url=None):
   app = Flask(__name__)
+  load_dotenv()
 
   app.config["PROPAGATE_EXCEPTIONS"] = True
   app.config["API_TITLE"] = "Stores REST API"
